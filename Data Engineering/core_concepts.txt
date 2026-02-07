@@ -1,0 +1,60 @@
+# Data engineering: DBAs, Architects, Data managers
+
+Data Types
+ Structured Data: Rows and columns, found in SQL databases and spreadsheets.
+ Semi-Structured Data: Both structured and unstructured elements, emails, XML files, and JSON.
+ Unstructured Data: Complex data that cannot be easily organized, including photos, videos, and social media content.
+Data Formats 
+ File Formats: CSV, TSV (tab-separated values), Microsoft Excel Open XML (XLSX)
+ Key File Formats: PDF, Extensible Markup Language (XML), JavaScript Object Notation (JSON) 
+Data Source: Data stream/RSS Feeds (IoT), Relational databases (SQL Server, AWS RDS, IBM DB2, Azure SQL), Flat files (CSV and XML), API/Web (JSON, XML)
+Tools: SQL, Python, Java, C#, Node.js, Linux, Powershell
+Metadata: Data that provides information about other data. Tools: IBM InfoSphere, Azure Data Catalog 
+Data Repositories
+ (OLTP) Online Transactional Procesing Systems: High-volume operational data and relational DBs such as banking transactions.
+ (OLAP) Online Analytical Procesing Systems: Optimized for complex analytics, including data warehouses and big data stores.
+
+DBs, storage and repository: Based on use case, performance, volume, scalability, compatibility
+ RDBMS (Relatoonal DB): ACID compliant, ideal for OLTP and IoT, limited with instructured data
+ NoSQL: no ACID compliant, cost effective, escalable and flexible. Types: Key-value (DynamoDB, Redis), Document (Mongo DB, Couch DB), Column (Casandra, Apache HBASE) Graph (CosmosDB, Neo4J)
+ Warehouses: Integrate multiple sources, often with three-tier architecture: database servers, OLAP servers for processing, and client front-end tools for querying and reporting.
+  Lower cost, limitless storage, scale on pay-as-go,fast disaster recovery
+  Types: AWS Redshift, BigQuery, Snowflake, Oracle Exadata, IBM Db2, cloudera
+ Marts: Subsections warehouses for specific business functions, often three types: dependent, independent, and hybrid data marts.
+  Relevant data to users, improve response times, data-driven
+ Lakes: Store large amounts of unstructured, semi-structured, and structured data in its native format 
+  AWS, Azure, GC, IBM, SAS, Oracle exadata, Cloudera
+ Lakehouses: Combine lakes with Warehouses
+
+ETL, ELT & Pipelines
+ ETL Process (Extract, Transform, Load): Conversion of raw data into analysis-ready, through batch processing (large chunks at scheduled intervals) or stream processing (real-time data).
+  AWS Glue, IBM infosphere
+ ELT Process (Extract, Load, Transform): Handling large sets of unstructured data, first loaded into the target system (often a data lake)
+ Piplines: Entire journey of data, batch and streaming data processing.
+  Apache Airflow, Data flow, beam
+ Data Integration: Practices, techniques, and tools for ingesting, transforming, combining, and provisioning data across various types.
+  data consistency, master data management, data sharing, and data migration.
+
+Big Data: Tools Cassandra, Google Big Table, Apache Spark, Hive & Hadoop. Velocity (speed of data accumulation), volume (scale of data), variety (diversity of data types), veracity (quality and accuracy of data), and value (turning data into useful insights).
+ Apache Hadoop: framework for distributed datasets across clusters of computers, allowing scalability from a single node to many.
+  (HDFS) Hadoop Distributed File System, which partitions files across multiple nodes for parallel access and fault tolerance.
+ Apache Hive: Open-source data warehouse software built on Hadoop, used for ETL and reporting but high latency, less ideal for apps need fast response times.
+ Apache Spark: General-purpose data processing engine that performs complex analytics in real-time, utilizing in-memory processing for speed.
+  Access data of multiple sources like HDFS, Hive, Java, Scala, Python
+
+Arch Data Platform
+Data stores: types (RDBMS, NoSQL), design considerations (data volume, intended use, security), normalization, performance, and scalability.
+Security and Governance: Access Control, Encryption, Management and Monitoring
+Data Laws: GDPR General Data protection regulation, CCPA California Consumer Privacy Act, HIPAA Health insurance portability and accountability Act
+Sec layers: Physical Infrastructure, Network Security, Application Security, Data Security
+Arch Layers: 
+ Data Ingestion Layer: Connect source systems and transfer data in data platform, streaming and batch modes.
+  Tools: GC DataFlow, Amazon Kinesis, Apache Kafka.
+ Data Storage and Integration Layer: Stores data for processing, transforming and merging extracted data.
+  Tools; IBM DB2, MySQL, AWS RDS and GC/Azure SQL.
+ Data Processing Layer: Validations, transformations, business logic, batch and streaming modes.
+  Tools: Python, R, and OpenRefine, Watson Refinery
+ Data Pipeline Layer: Data ingestion Apache Airflow
+ Metadata: Transversal to every layer
+ User interface layer and Analysis: Data Science, BI Analysis, Apps, Stake Holders
+  Tools: APIs, Power BI, Tableau, IBM Cognos Analytics, Jupiter, Python, R,  
